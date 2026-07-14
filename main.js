@@ -76,10 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const seekBar = document.getElementById('seek-bar');
   const chapterDisplay = document.getElementById('chapter-display');
   const timeDisplay = document.getElementById('time');
-  const autoScrollBtn = document.getElementById('auto-scroll-btn');
 
-  let isAutoScrollEnabled = true;
-  let hasUserScrolled = false;
   let currentActiveSlideIndex = 0;
   let isDragging = false;
 
@@ -115,15 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return currentChapter;
   }
 
-  autoScrollBtn.addEventListener('click', () => {
-    isAutoScrollEnabled = !isAutoScrollEnabled;
-    autoScrollBtn.classList.toggle('active', isAutoScrollEnabled);
-    if(isAutoScrollEnabled) {
-       hasUserScrolled = false;
-       currentActiveSlideIndex = -1; 
-    }
-  });
-
   function formatTime(seconds) {
     if (isNaN(seconds)) return "00:00";
     const min = Math.floor(seconds / 60);
@@ -139,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (audio.paused) {
       audio.play().catch(e => console.error("Playback failed:", e));
       playBtn.textContent = '⏸';
-      hasUserScrolled = false; 
       currentActiveSlideIndex = -1;
     } else {
       audio.pause();
@@ -169,15 +156,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    if (isAutoScrollEnabled) {
-      if (targetSlideIndex !== currentActiveSlideIndex) {
-        slides[targetSlideIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
-        currentActiveSlideIndex = targetSlideIndex;
-        
-        const leavesContainer = document.getElementById('leaves-container');
-        if (leavesContainer) {
-          leavesContainer.style.opacity = targetSlideIndex === 0 ? '1' : '0';
-        }
+    if (targetSlideIndex !== currentActiveSlideIndex) {
+      slides[targetSlideIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      currentActiveSlideIndex = targetSlideIndex;
+      
+      const leavesContainer = document.getElementById('leaves-container');
+      if (leavesContainer) {
+        leavesContainer.style.opacity = targetSlideIndex === 0 ? '1' : '0';
       }
     }
   });
@@ -194,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
     isDragging = false;
     const percent = e.target.value / 100;
     audio.currentTime = percent * audio.duration;
-    hasUserScrolled = false;
     currentActiveSlideIndex = -1;
   });
   

@@ -144,23 +144,7 @@ input[type=range]::-webkit-slider-thumb:hover {
   text-align: right;
 }
 
-#auto-scroll-btn {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
 
-#auto-scroll-btn.active {
-  background: rgba(212, 175, 55, 0.2);
-  border-color: var(--accent-color);
-  color: var(--accent-color);
-}
 
 .slide {
   position: relative;
