@@ -88,23 +88,23 @@ document.addEventListener('DOMContentLoaded', () => {
       progress.style.width = `${percent * 100}%`;
       timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
 
-      // Precise thresholds calculated from audio script character pacing (16 slides)
+      // Precise thresholds extracted via Whisper AI speech recognition (16 slides)
       let targetSlideIndex = 0;
-      if (percent >= 0.93) targetSlideIndex = 15;
-      else if (percent >= 0.87) targetSlideIndex = 14;
-      else if (percent >= 0.80) targetSlideIndex = 13;
-      else if (percent >= 0.76) targetSlideIndex = 12;
-      else if (percent >= 0.71) targetSlideIndex = 11;
-      else if (percent >= 0.68) targetSlideIndex = 10;
-      else if (percent >= 0.64) targetSlideIndex = 9;
-      else if (percent >= 0.61) targetSlideIndex = 8;
-      else if (percent >= 0.57) targetSlideIndex = 7;
-      else if (percent >= 0.51) targetSlideIndex = 6;
-      else if (percent >= 0.45) targetSlideIndex = 5;
-      else if (percent >= 0.34) targetSlideIndex = 4;
-      else if (percent >= 0.24) targetSlideIndex = 3;
-      else if (percent >= 0.16) targetSlideIndex = 2;
-      else if (percent >= 0.08) targetSlideIndex = 1;
+      if (percent >= 0.932) targetSlideIndex = 15;
+      else if (percent >= 0.899) targetSlideIndex = 14;
+      else if (percent >= 0.841) targetSlideIndex = 13;
+      else if (percent >= 0.815) targetSlideIndex = 12;
+      else if (percent >= 0.757) targetSlideIndex = 11;
+      else if (percent >= 0.710) targetSlideIndex = 10;
+      else if (percent >= 0.666) targetSlideIndex = 9;
+      else if (percent >= 0.640) targetSlideIndex = 8;
+      else if (percent >= 0.595) targetSlideIndex = 7;
+      else if (percent >= 0.544) targetSlideIndex = 6;
+      else if (percent >= 0.417) targetSlideIndex = 5;
+      else if (percent >= 0.349) targetSlideIndex = 4;
+      else if (percent >= 0.272) targetSlideIndex = 3;
+      else if (percent >= 0.188) targetSlideIndex = 2;
+      else if (percent >= 0.134) targetSlideIndex = 1;
 
       if (isAutoScrollEnabled) {
         if (targetSlideIndex !== currentActiveSlideIndex) {
