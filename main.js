@@ -111,12 +111,13 @@ document.addEventListener('DOMContentLoaded', () => {
       progress.style.width = `${percent * 100}%`;
       timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
 
-      // Precise thresholds extracted via Whisper AI speech recognition (16 slides)
+      // Precise thresholds extracted via Whisper AI speech recognition (17 slides)
       let targetSlideIndex = 0;
-      if (percent >= 0.932) targetSlideIndex = 15;
-      else if (percent >= 0.899) targetSlideIndex = 14;
-      else if (percent >= 0.841) targetSlideIndex = 13;
-      else if (percent >= 0.815) targetSlideIndex = 12;
+      if (percent >= 0.932) targetSlideIndex = 16;
+      else if (percent >= 0.899) targetSlideIndex = 15;
+      else if (percent >= 0.841) targetSlideIndex = 14;
+      else if (percent >= 0.815) targetSlideIndex = 13;
+      else if (percent >= 0.783) targetSlideIndex = 12;
       else if (percent >= 0.750) targetSlideIndex = 11;
       else if (percent >= 0.710) targetSlideIndex = 10;
       else if (percent >= 0.666) targetSlideIndex = 9;
