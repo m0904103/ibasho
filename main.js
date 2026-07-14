@@ -14,10 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.classList.add('visible');
         const bg = entry.target.querySelector('.bg-image');
         if(bg) {
-          if (bg.dataset.bg) {
-            bg.style.backgroundImage = `url('${bg.dataset.bg}')`;
-            bg.removeAttribute('data-bg');
-          }
           bg.style.opacity = '0.7';
           bg.style.transform = 'scale(1.05)';
         }
@@ -31,11 +27,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, observerOptions);
 
+  const lazyLoadObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bg = entry.target.querySelector('.bg-image');
+        if (bg && bg.dataset.bg) {
+          bg.style.backgroundImage = `url('${bg.dataset.bg}')`;
+          bg.removeAttribute('data-bg');
+        }
+      }
+    });
+  }, { rootMargin: '1500px 0px', threshold: 0 });
+
   const slides = document.querySelectorAll('.slide');
   slides.forEach(el => {
     const bg = el.querySelector('.bg-image');
     if(bg) bg.style.transition = 'opacity 2s ease, transform 10s ease';
     observer.observe(el);
+    lazyLoadObserver.observe(el);
   });
 
   // Audio Player Logic
