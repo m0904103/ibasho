@@ -88,18 +88,19 @@ document.addEventListener('DOMContentLoaded', () => {
       progress.style.width = `${percent * 100}%`;
       timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
 
-      // Precise thresholds calculated from audio script character pacing (12 slides)
+      // Precise thresholds calculated from audio script character pacing (13 slides)
       let targetSlideIndex = 0;
-      if (percent >= 0.93) targetSlideIndex = 11;
-      else if (percent >= 0.87) targetSlideIndex = 10;
-      else if (percent >= 0.80) targetSlideIndex = 9;
-      else if (percent >= 0.76) targetSlideIndex = 8;
-      else if (percent >= 0.71) targetSlideIndex = 7;
-      else if (percent >= 0.64) targetSlideIndex = 6;
-      else if (percent >= 0.57) targetSlideIndex = 5;
-      else if (percent >= 0.51) targetSlideIndex = 4;
-      else if (percent >= 0.34) targetSlideIndex = 3;
-      else if (percent >= 0.21) targetSlideIndex = 2;
+      if (percent >= 0.93) targetSlideIndex = 12;
+      else if (percent >= 0.87) targetSlideIndex = 11;
+      else if (percent >= 0.80) targetSlideIndex = 10;
+      else if (percent >= 0.76) targetSlideIndex = 9;
+      else if (percent >= 0.71) targetSlideIndex = 8;
+      else if (percent >= 0.64) targetSlideIndex = 7;
+      else if (percent >= 0.57) targetSlideIndex = 6;
+      else if (percent >= 0.51) targetSlideIndex = 5;
+      else if (percent >= 0.34) targetSlideIndex = 4;
+      else if (percent >= 0.24) targetSlideIndex = 3;
+      else if (percent >= 0.16) targetSlideIndex = 2;
       else if (percent >= 0.08) targetSlideIndex = 1;
 
       if (isAutoScrollEnabled) {
