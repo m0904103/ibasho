@@ -12,11 +12,14 @@
   <div class="audio-player">
     <div class="player-controls">
       <button id="play-btn">▶</button>
-      <div class="progress-bar">
-        <div class="progress" id="progress"></div>
+      <div class="progress-wrapper">
+        <div class="chapter-display" id="chapter-display">章節：人生100幸福處方箋</div>
+        <input type="range" id="seek-bar" min="0" max="100" value="0" step="0.1">
       </div>
-      <span id="time">00:00 / 00:00</span>
-      <button id="auto-scroll-btn" class="active" title="自動跟隨語音滾動">🔄 自動跟隨</button>
+      <div class="time-controls">
+        <span id="time">00:00 / 00:00</span>
+        <button id="auto-scroll-btn" class="active" title="自動跟隨">🔄 自動</button>
+      </div>
     </div>
     <audio id="audio" src="/居場所.mp3" preload="metadata"></audio>
   </div>

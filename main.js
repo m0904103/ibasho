@@ -47,37 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     lazyLoadObserver.observe(el);
   });
 
-  // Audio Player Logic
-  const audio = document.getElementById('audio');
-  const playBtn = document.getElementById('play-btn');
-  const progressBar = document.querySelector('.progress-bar');
-  const progress = document.getElementById('progress');
-  const timeDisplay = document.getElementById('time');
-  const autoScrollBtn = document.getElementById('auto-scroll-btn');
-
-  let isAutoScrollEnabled = true;
-  let hasUserScrolled = false;
-  let currentActiveSlideIndex = 0;
-
-  // Auto Scroll Toggle
-  autoScrollBtn.addEventListener('click', () => {
-    isAutoScrollEnabled = !isAutoScrollEnabled;
-    autoScrollBtn.classList.toggle('active', isAutoScrollEnabled);
-    if(isAutoScrollEnabled) {
-       hasUserScrolled = false; // Force resume
-       currentActiveSlideIndex = -1; // Force immediate scroll update
-    }
-  });
-
-  // Removed oversensitive manual scroll detection on mobile
-
-  function formatTime(seconds) {
-    if (isNaN(seconds)) return "00:00";
-    const min = Math.floor(seconds / 60);
-    const sec = Math.floor(seconds % 60);
-    return `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
-  }
-
   // Falling leaves animation
   function initLeaves() {
     const container = document.getElementById('leaves-container');
@@ -101,6 +70,67 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   initLeaves();
 
+  // Audio Player Logic with Chapter Tracking
+  const audio = document.getElementById('audio');
+  const playBtn = document.getElementById('play-btn');
+  const seekBar = document.getElementById('seek-bar');
+  const chapterDisplay = document.getElementById('chapter-display');
+  const timeDisplay = document.getElementById('time');
+  const autoScrollBtn = document.getElementById('auto-scroll-btn');
+
+  let isAutoScrollEnabled = true;
+  let hasUserScrolled = false;
+  let currentActiveSlideIndex = 0;
+  let isDragging = false;
+
+  const chapters = [
+    { percent: 0.000, title: '開場：人生100' },
+    { percent: 0.094, title: '壽命中位數 107 歲' },
+    { percent: 0.183, title: '伊斯特林悖論' },
+    { percent: 0.272, title: '回流教育的侷限' },
+    { percent: 0.349, title: '學校如圓形監獄' },
+    { percent: 0.417, title: 'AAR 的做法' },
+    { percent: 0.544, title: '共感 Compassion' },
+    { percent: 0.595, title: '關懷下一代 Generativity' },
+    { percent: 0.640, title: '老年期超越' },
+    { percent: 0.666, title: '動態拼圖模式' },
+    { percent: 0.710, title: '陪伴與留白' },
+    { percent: 0.750, title: '孤食' },
+    { percent: 0.783, title: '社會處方箋' },
+    { percent: 0.815, title: '住み開き' },
+    { percent: 0.841, title: '出番 (出場舞台)' },
+    { percent: 0.899, title: '恩送 Pay It Forward' },
+    { percent: 0.932, title: '學習的甜甜圈' }
+  ];
+
+  function getChapterByPercent(percent) {
+    let currentChapter = chapters[0];
+    for (let i = 0; i < chapters.length; i++) {
+      if (percent >= chapters[i].percent) {
+        currentChapter = chapters[i];
+      } else {
+        break;
+      }
+    }
+    return currentChapter;
+  }
+
+  autoScrollBtn.addEventListener('click', () => {
+    isAutoScrollEnabled = !isAutoScrollEnabled;
+    autoScrollBtn.classList.toggle('active', isAutoScrollEnabled);
+    if(isAutoScrollEnabled) {
+       hasUserScrolled = false;
+       currentActiveSlideIndex = -1; 
+    }
+  });
+
+  function formatTime(seconds) {
+    if (isNaN(seconds)) return "00:00";
+    const min = Math.floor(seconds / 60);
+    const sec = Math.floor(seconds % 60);
+    return `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+  }
+
   audio.addEventListener('loadedmetadata', () => {
     timeDisplay.textContent = `00:00 / ${formatTime(audio.duration)}`;
   });
@@ -110,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
       audio.play().catch(e => console.error("Playback failed:", e));
       playBtn.textContent = '⏸';
       hasUserScrolled = false; 
-      currentActiveSlideIndex = -1; // Trigger scroll to current section immediately
+      currentActiveSlideIndex = -1;
     } else {
       audio.pause();
       playBtn.textContent = '▶';
@@ -118,56 +148,60 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   audio.addEventListener('timeupdate', () => {
-    if (audio.duration) {
-      const percent = audio.currentTime / audio.duration;
-      
-      progress.style.width = `${percent * 100}%`;
-      timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+    if (!audio.duration) return;
+    
+    const percent = audio.currentTime / audio.duration;
+    
+    if (!isDragging) {
+      seekBar.value = percent * 100;
+      const currentChapter = getChapterByPercent(percent);
+      chapterDisplay.textContent = `章節：${currentChapter.title}`;
+    }
+    
+    timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
 
-      // Precise thresholds extracted via Whisper AI speech recognition (17 slides)
-      let targetSlideIndex = 0;
-      if (percent >= 0.932) targetSlideIndex = 16;
-      else if (percent >= 0.899) targetSlideIndex = 15;
-      else if (percent >= 0.841) targetSlideIndex = 14;
-      else if (percent >= 0.815) targetSlideIndex = 13;
-      else if (percent >= 0.783) targetSlideIndex = 12;
-      else if (percent >= 0.750) targetSlideIndex = 11;
-      else if (percent >= 0.710) targetSlideIndex = 10;
-      else if (percent >= 0.666) targetSlideIndex = 9;
-      else if (percent >= 0.640) targetSlideIndex = 8;
-      else if (percent >= 0.595) targetSlideIndex = 7;
-      else if (percent >= 0.544) targetSlideIndex = 6;
-      else if (percent >= 0.417) targetSlideIndex = 5;
-      else if (percent >= 0.349) targetSlideIndex = 4;
-      else if (percent >= 0.272) targetSlideIndex = 3;
-      else if (percent >= 0.183) targetSlideIndex = 2;
-      else if (percent >= 0.094) targetSlideIndex = 1;
+    // Auto scroll logic
+    let targetSlideIndex = 0;
+    for (let i = chapters.length - 1; i >= 0; i--) {
+      if (percent >= chapters[i].percent) {
+        targetSlideIndex = i;
+        break;
+      }
+    }
 
-      if (isAutoScrollEnabled) {
-        if (targetSlideIndex !== currentActiveSlideIndex) {
-          slides[targetSlideIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
-          currentActiveSlideIndex = targetSlideIndex;
-          
-          const leavesContainer = document.getElementById('leaves-container');
-          if (leavesContainer) {
-            leavesContainer.style.opacity = targetSlideIndex === 0 ? '1' : '0';
-          }
+    if (isAutoScrollEnabled) {
+      if (targetSlideIndex !== currentActiveSlideIndex) {
+        slides[targetSlideIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        currentActiveSlideIndex = targetSlideIndex;
+        
+        const leavesContainer = document.getElementById('leaves-container');
+        if (leavesContainer) {
+          leavesContainer.style.opacity = targetSlideIndex === 0 ? '1' : '0';
         }
       }
     }
   });
 
-  progressBar.addEventListener('click', (e) => {
-    const rect = progressBar.getBoundingClientRect();
-    const pos = (e.clientX - rect.left) / rect.width;
-    audio.currentTime = pos * audio.duration;
+  // Range slider interaction
+  seekBar.addEventListener('input', (e) => {
+    isDragging = true;
+    const percent = e.target.value / 100;
+    const hoverChapter = getChapterByPercent(percent);
+    chapterDisplay.textContent = `跳轉至：${hoverChapter.title}`;
+  });
+
+  seekBar.addEventListener('change', (e) => {
+    isDragging = false;
+    const percent = e.target.value / 100;
+    audio.currentTime = percent * audio.duration;
     hasUserScrolled = false;
     currentActiveSlideIndex = -1;
   });
   
   audio.addEventListener('ended', () => {
     playBtn.textContent = '▶';
-    progress.style.width = '0%';
+    seekBar.value = 0;
+    chapterDisplay.textContent = `章節：${chapters[0].title}`;
     audio.currentTime = 0;
     currentActiveSlideIndex = 0;
     window.scrollTo({ top: 0, behavior: 'smooth' });
