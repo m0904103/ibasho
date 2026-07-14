@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
       else if (percent >= 0.899) targetSlideIndex = 14;
       else if (percent >= 0.841) targetSlideIndex = 13;
       else if (percent >= 0.815) targetSlideIndex = 12;
-      else if (percent >= 0.757) targetSlideIndex = 11;
+      else if (percent >= 0.750) targetSlideIndex = 11;
       else if (percent >= 0.710) targetSlideIndex = 10;
       else if (percent >= 0.666) targetSlideIndex = 9;
       else if (percent >= 0.640) targetSlideIndex = 8;
