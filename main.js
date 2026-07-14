@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.classList.add('visible');
         const bg = entry.target.querySelector('.bg-image');
         if(bg) {
+          if (bg.dataset.bg) {
+            bg.style.backgroundImage = `url('${bg.dataset.bg}')`;
+            bg.removeAttribute('data-bg');
+          }
           bg.style.opacity = '0.7';
           bg.style.transform = 'scale(1.05)';
         }
