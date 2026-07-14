@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
       else if (percent >= 0.349) targetSlideIndex = 4;
       else if (percent >= 0.272) targetSlideIndex = 3;
       else if (percent >= 0.188) targetSlideIndex = 2;
-      else if (percent >= 0.134) targetSlideIndex = 1;
+      else if (percent >= 0.094) targetSlideIndex = 1;
 
       if (isAutoScrollEnabled) {
         if (targetSlideIndex !== currentActiveSlideIndex) {
