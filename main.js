@@ -56,9 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Detect manual scroll
-  window.addEventListener('wheel', () => { hasUserScrolled = true; }, {passive: true});
-  window.addEventListener('touchmove', () => { hasUserScrolled = true; }, {passive: true});
+  // Removed oversensitive manual scroll detection on mobile
 
   function formatTime(seconds) {
     if (isNaN(seconds)) return "00:00";
@@ -101,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
       else if (percent >= 0.22) targetSlideIndex = 2;
       else if (percent >= 0.11) targetSlideIndex = 1;
 
-      if (isAutoScrollEnabled && !hasUserScrolled) {
+      if (isAutoScrollEnabled) {
         if (targetSlideIndex !== currentActiveSlideIndex) {
           slides[targetSlideIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
           currentActiveSlideIndex = targetSlideIndex;
