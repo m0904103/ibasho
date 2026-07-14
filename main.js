@@ -88,16 +88,16 @@ document.addEventListener('DOMContentLoaded', () => {
       progress.style.width = `${percent * 100}%`;
       timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
 
-      // Adjusted thresholds to support 9 slides
+      // Precise thresholds calculated from audio script character pacing
       let targetSlideIndex = 0;
-      if (percent >= 0.88) targetSlideIndex = 8;
-      else if (percent >= 0.77) targetSlideIndex = 7;
-      else if (percent >= 0.66) targetSlideIndex = 6;
-      else if (percent >= 0.55) targetSlideIndex = 5;
-      else if (percent >= 0.44) targetSlideIndex = 4;
-      else if (percent >= 0.33) targetSlideIndex = 3;
-      else if (percent >= 0.22) targetSlideIndex = 2;
-      else if (percent >= 0.11) targetSlideIndex = 1;
+      if (percent >= 0.93) targetSlideIndex = 8;
+      else if (percent >= 0.87) targetSlideIndex = 7;
+      else if (percent >= 0.80) targetSlideIndex = 6;
+      else if (percent >= 0.73) targetSlideIndex = 5;
+      else if (percent >= 0.57) targetSlideIndex = 4;
+      else if (percent >= 0.51) targetSlideIndex = 3;
+      else if (percent >= 0.31) targetSlideIndex = 2;
+      else if (percent >= 0.08) targetSlideIndex = 1;
 
       if (isAutoScrollEnabled) {
         if (targetSlideIndex !== currentActiveSlideIndex) {
