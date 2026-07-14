@@ -142,7 +142,7 @@ body, html {
   opacity: 0.2;
   z-index: -1;
   transition: opacity 1.5s ease, filter 1.5s ease;
-  filter: grayscale(20%) blur(6px); /* Added heavy blur to obscure AI text on signs */
+  filter: grayscale(20%); /* Removed blur as requested */
 }
 
 .slide::after {
