@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>居常所 - 牧野篤大師有聲書</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="audio-player">
+    <div class="player-controls">
+      <button id="play-btn">▶</button>
+      <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+      </div>
+      <span id="time">00:00 / 00:00</span>
+      <button id="auto-scroll-btn" class="active" title="自動跟隨語音滾動">🔄 自動跟隨</button>
+    </div>
+    <audio id="audio" src="/居常所.mp3"></audio>
+  </div>
+
+  <section class="hero slide fade-in">
+    <div class="bg-image" style="background-image: url('/images/1.png')"></div>
+    <div class="content">
+      <h1>讓我們成為彼此的故鄉</h1>
+      <p class="scroll-hint">向下滾動聆聽</p>
+    </div>
+  </section>
+
+  <section class="slide fade-in">
+    <div class="bg-image" style="background-image: url('/images/2.png')"></div>
+    <div class="content text-content">
+      <p>過去我們熟悉的求學、就業、退休三個台階劇本，已經失效了呢。</p>
+      <p>日本出生的孩子們，預測壽命中位數已經是 107 歲了。隨著年齡的增加，每個人之間的差距越來越大...</p>
+    </div>
+  </section>
+
+  <section class="slide fade-in">
+    <div class="bg-image" style="background-image: url('/images/3.png')"></div>
+    <div class="content text-content">
+      <p>你想想，我們過去的學校是怎麼設計的？</p>
+      <p>全部都是基於同一個空間設計的基本思想，這就是 Panopticon，圓形監獄。</p>
+      <p>所以我們學會了聽話，學會了老實。</p>
+    </div>
+  </section>
+
+  <section class="slide fade-in">
+    <div class="bg-image" style="background-image: url('/images/4.png')"></div>
+    <div class="content text-content">
+      <p>要發揮做中學的反思，其實我們都有美好的本質，那就是共感，Compassion。</p>
+      <p>看到別人處於痛苦的狀況，自然而然地要幫助他們。</p>
+      <p>就像台灣花蓮水災時的那位鏟子超人一樣...</p>
+    </div>
+  </section>
+
+  <section class="slide fade-in">
+    <div class="bg-image" style="background-image: url('/images/5.png')"></div>
+    <div class="content text-content">
+      <p>老了以後，對下一代的關懷之情是越來越強的。</p>
+      <p>這就是人在進化的過程當中開發的本質，也就是 Generativity。</p>
+    </div>
+  </section>
+
+  <section class="slide fade-in slide-6">
+    <div class="bg-image" style="background-image: url('/images/6.png')"></div>
+    <div class="top-banner-overlay">
+      <div class="banner-text">孤食 <span>(こしょく)</span></div>
+      <div class="banner-text">住み開き <span>(すみびらき)</span></div>
+    </div>
+    <div class="content text-content">
+      <p>建立起交流後，我們還要記得好好吃飯。一個人吃飯的話，這就是所謂的孤食。</p>
+      <p>我們需要創造新的人與人互相承認、幫助的關係。</p>
+      <p>把私人空間稍微打開一點點，這就是所謂的「住み開き」。</p>
+    </div>
+  </section>
+
+  <section class="slide fade-in">
+    <div class="bg-image" style="background-image: url('/images/7.png')"></div>
+    <div class="content text-content">
+      <p>還要創造能讓長輩展現價值的「出場」舞台，也就是 Deban。</p>
+      <p>就像台中的彩虹爺爺一樣，透過繪畫，他解決了自己的寂寞，</p>
+      <p>還得到了世界的認可，那裡就變成了他心中的故鄉呢。</p>
+    </div>
+  </section>
+
+  <section class="slide fade-in">
+    <div class="bg-image" style="background-image: url('/images/8.png')"></div>
+    <div class="content text-content">
+      <p>有了這樣的防護網，現在的故鄉，已經不是土地，是人與人之間的關係了。</p>
+      <p>受了別人的照顧，除了報恩以外，還要把好的事情傳送給人家。</p>
+      <p>這就是恩送，Pay It Forward。</p>
+    </div>
+  </section>
+
+  <section class="slide fade-in">
+    <div class="bg-image" style="background-image: url('/images/9.png')"></div>
+    <div class="content text-content">
+      <p>把社區當作一個甜甜圈，裡面的洞，也就是讓各種功能連起來的核心。</p>
+      <p>那個核心就是「學習」。</p>
+      <p>各位，把心靜下來。帶著這份人與人之間充滿厚度的溫暖，繼續走下去吧。</p>
+    </div>
+  </section>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
