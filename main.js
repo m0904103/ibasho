@@ -65,6 +65,29 @@ document.addEventListener('DOMContentLoaded', () => {
     return `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
   }
 
+  // Falling leaves animation
+  function initLeaves() {
+    const container = document.getElementById('leaves-container');
+    if (!container) return;
+    for (let i = 0; i < 35; i++) {
+      const leaf = document.createElement('div');
+      leaf.classList.add('leaf');
+      leaf.style.left = `${Math.random() * 100}%`;
+      const fallDuration = 15 + Math.random() * 20; 
+      const swayDuration = 3 + Math.random() * 4; 
+      const delay = Math.random() * 20; 
+      leaf.style.animationDuration = `${fallDuration}s, ${swayDuration}s`;
+      leaf.style.animationDelay = `${delay}s, 0s`;
+      const scale = 0.5 + Math.random() * 1.5;
+      leaf.style.transform = `scale(${scale})`;
+      const colorRand = Math.random();
+      if(colorRand > 0.7) leaf.style.background = 'rgba(139, 69, 19, 0.4)';
+      else if(colorRand > 0.4) leaf.style.background = 'rgba(160, 82, 45, 0.4)';
+      container.appendChild(leaf);
+    }
+  }
+  initLeaves();
+
   audio.addEventListener('loadedmetadata', () => {
     timeDisplay.textContent = `00:00 / ${formatTime(audio.duration)}`;
   });
@@ -110,6 +133,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetSlideIndex !== currentActiveSlideIndex) {
           slides[targetSlideIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
           currentActiveSlideIndex = targetSlideIndex;
+          
+          const leavesContainer = document.getElementById('leaves-container');
+          if (leavesContainer) {
+            leavesContainer.style.opacity = targetSlideIndex === 0 ? '1' : '0';
+          }
         }
       }
     }

@@ -262,3 +262,40 @@ body, html {
   letter-spacing: 2px;
   margin-top: 10px;
 }
+
+/* Falling Leaves Animation */
+#leaves-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+  transition: opacity 3s ease;
+}
+
+.leaf {
+  position: absolute;
+  top: -10%;
+  width: 20px;
+  height: 20px;
+  background: rgba(212, 175, 55, 0.4);
+  border-radius: 0 50% 0 50%;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.4);
+  animation: fall linear infinite, sway ease-in-out infinite alternate;
+}
+
+@keyframes fall {
+  0% { top: -10%; transform: rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 110%; transform: rotate(360deg); opacity: 0; }
+}
+
+@keyframes sway {
+  0% { margin-left: -30px; }
+  100% { margin-left: 30px; }
+}
