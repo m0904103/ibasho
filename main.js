@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { percent: 0.640, title: '老年期超越' },
     { percent: 0.666, title: '動態拼圖模式' },
     { percent: 0.710, title: '陪伴與留白' },
-    { percent: 0.750, title: '孤食' },
+    { percent: 0.747, title: '孤食' },
     { percent: 0.783, title: '社會處方箋' },
     { percent: 0.815, title: '住み開き' },
     { percent: 0.841, title: '出番 (出場舞台)' },
