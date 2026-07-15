@@ -260,7 +260,7 @@ input[type=range]::-webkit-slider-thumb:hover {
   .audio-player { width: 85%; padding: 12px 20px; bottom: 20px; }
   #play-btn { font-size: 24px; }
   .banner-text { font-size: 1.6rem !important; width: 100%; text-align: center; }
-  .top-banner-overlay { justify-content: center !important; align-items: flex-start !important; padding-top: 40px !important; height: 30% !important; }
+  .top-banner-overlay { justify-content: center !important; align-items: center !important; flex-direction: column !important; padding-top: 40px !important; height: 30% !important; }
 }
 
 /* Banner Overlay to hide AI text on Slide 6 */
@@ -273,8 +273,9 @@ input[type=range]::-webkit-slider-thumb:hover {
   background: linear-gradient(to bottom, rgba(18,18,18,1) 0%, rgba(18,18,18,0.8) 50%, rgba(18,18,18,0) 100%);
   z-index: 5;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 60px;
   pointer-events: none;
 }
