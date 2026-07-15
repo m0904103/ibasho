@@ -188,10 +188,5 @@ document.addEventListener('DOMContentLoaded', () => {
   
   audio.addEventListener('ended', () => {
     playBtn.textContent = '▶';
-    seekBar.value = 0;
-    chapterDisplay.textContent = `章節：${chapters[0].title}`;
-    audio.currentTime = 0;
-    currentActiveSlideIndex = 0;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
