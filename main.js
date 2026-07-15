@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { percent: 0.245, title: '保羅朗格蘭：終身教育' },
     { percent: 0.280, title: '回流教育的侷限' },
     { percent: 0.321, title: '學校如圓形監獄' },
+    { percent: 0.379, title: '制式教育' },
     { percent: 0.417, title: 'AAR 的做法' },
     { percent: 0.544, title: '共感 Compassion' },
     { percent: 0.595, title: '關懷下一代 Generativity' },
