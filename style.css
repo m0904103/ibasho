@@ -255,11 +255,12 @@ input[type=range]::-webkit-slider-thumb:hover {
 
 @media (max-width: 768px) {
   .hero h1 { font-size: 3.5rem; letter-spacing: 5px; }
-  .text-content p { font-size: 1.25rem; line-height: 1.8; margin-bottom: 25px; }
+  .slide { padding: 80px 20px 120px 20px; }
+  .text-content p { font-size: 1.15rem; line-height: 1.7; margin-bottom: 20px; }
   .audio-player { width: 85%; padding: 12px 20px; bottom: 20px; }
   #play-btn { font-size: 24px; }
-  .banner-text { font-size: 1.8rem !important; width: 100%; text-align: center; }
-  .top-banner-overlay { justify-content: center !important; align-items: center !important; padding-top: 30px !important; height: 35% !important; }
+  .banner-text { font-size: 1.6rem !important; width: 100%; text-align: center; }
+  .top-banner-overlay { justify-content: center !important; align-items: flex-start !important; padding-top: 40px !important; height: 30% !important; }
 }
 
 /* Banner Overlay to hide AI text on Slide 6 */
