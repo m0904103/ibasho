@@ -1,0 +1,10 @@
+C:\Users\manpo\.gemini\antigravity\brain\dd82e0b4-3317-4ee6-b806-01e58b44561e\cross_check_report.md: | **動態拼圖、甜甜圈、軟著陸** | ✅ 課程講義 (第3、5、6章) | **精確。** 這些都是教授用來具象化「社區與學習」關係的專屬學術比喻。 |
+C:\Users\manpo\.gemini\antigravity\brain\dd82e0b4-3317-4ee6-b806-01e58b44561e\friendly_chat_script.md: 等我們在外面闖蕩夠了，回到社區做出一點貢獻，這叫「軟著陸」。當我們把社區當作一個「甜甜圈」，把學習當作核心的洞，就能建立一個共感幸福的「小社會」，把溫暖傳承給下一代。當我們脫離了所有的利害關係，感受到平靜與滿足，那就是最美好的「老年期超越」了。
+C:\Users\manpo\.gemini\antigravity\brain\dd82e0b4-3317-4ee6-b806-01e58b44561e\human_reading_script.md: 在廣闊世界活躍後，回到家鄉為社區做出一點貢獻，這叫做「軟著陸」。
+C:\Users\manpo\.gemini\antigravity\brain\dd82e0b4-3317-4ee6-b806-01e58b44561e\makino_complete_quotes.md: - 「我們要注意到活躍在廣闊的世界以後，是回到家以前還有一段時間，在這附近的小社區可以做出一點貢獻，然後慢慢地——我們把它叫做軟著陸——回到自己的家庭或者自己的家鄉裡面去。要慢慢地好好照顧、關懷下一代，要跟下一代的小孩互相接觸，自己成為下一代的新故鄉，這樣來過生活。」
+C:\Users\manpo\.gemini\antigravity\brain\dd82e0b4-3317-4ee6-b806-01e58b44561e\makino_complete_quotes.md: **→ 主題：從廣闊世界到小社會的「軟著陸」**
+C:\Users\manpo\.gemini\antigravity\brain\dd82e0b4-3317-4ee6-b806-01e58b44561e\makino_complete_quotes.md: | 第六章 | 9 句 | 恩送、新故鄉、共感幸福、軟著陸 |
+C:\Users\manpo\.gemini\antigravity\brain\dd82e0b4-3317-4ee6-b806-01e58b44561e\makino_verbatim_song.md: 有了這樣的防護網，現在的故鄉，已經不是土地，是人與人之間的關係了吧。受了別人的照顧，除了報恩以外，還要把好的事情傳送給人家，這就是恩送，Pay It Forward。我們要注意到，活躍在廣闊的世界以後，慢慢地——我們把它叫做軟著陸——回到自己的家庭或家鄉裡面去。
+C:\Users\manpo\.gemini\antigravity\brain\dd82e0b4-3317-4ee6-b806-01e58b44561e\suno_audiobook_prompt.md: 在廣闊世界活躍後，回到家鄉為社區做出一點貢獻，這叫做「軟著陸」。
+C:\Users\manpo\.gemini\antigravity\brain\dd82e0b4-3317-4ee6-b806-01e58b44561e\suno_casual_chat_prompt.md: 等我們在外面闖蕩夠了，回到社區做出一點貢獻，這叫「軟著陸」。
+C:\Users\manpo\.gemini\antigravity\brain\dd82e0b4-3317-4ee6-b806-01e58b44561e\suno_mysterious_healing_prompt.md: 我們在廣闊的世界活躍半生後，最終都要回到家鄉的小社區做出一點貢獻，這叫做「軟著陸」。
