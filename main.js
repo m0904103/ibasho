@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { percent: 0.747, title: '孤食' },
     { percent: 0.783, title: '社會處方箋' },
     { percent: 0.806, title: '住み開き' },
-    { percent: 0.841, title: '出番 (出場舞台)' },
+    { percent: 0.834, title: '出番 (出場舞台)' },
     { percent: 0.864, title: '恩送 Pay It Forward' },
     { percent: 0.884, title: '軟著陸' },
     { percent: 0.932, title: '學習的甜甜圈' },
