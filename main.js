@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { percent: 0.806, title: '住み開き' },
     { percent: 0.834, title: '出番 (出場舞台)' },
     { percent: 0.873, title: '恩送 Pay It Forward' },
-    { percent: 0.884, title: '軟著陸' },
+    { percent: 0.908, title: '軟著陸' },
     { percent: 0.932, title: '學習的甜甜圈' },
     { percent: 0.985, title: '終章：幸福人生 頑張って' }
   ];
