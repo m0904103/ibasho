@@ -336,3 +336,7 @@ input[type=range]::-webkit-slider-thumb:hover {
   0% { margin-left: -30px; }
   100% { margin-left: 30px; }
 }
+
+/* Special protection for the brightened gears slide text */
+#gears-slide .text-content { background: rgba(0, 0, 0, 0.4); padding: 25px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.8); }
+#gears-slide .text-content p { text-shadow: 2px 2px 8px rgba(0,0,0,1); }

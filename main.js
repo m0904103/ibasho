@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.classList.add('visible');
         const bg = entry.target.querySelector('.bg-image');
         if(bg) {
-          bg.style.opacity = '0.7';
+          bg.style.opacity = entry.target.id === 'gears-slide' ? '1.0' : '0.7';
           bg.style.transform = 'scale(1.05)';
         }
       } else {
